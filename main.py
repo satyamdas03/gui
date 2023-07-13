@@ -9,9 +9,7 @@ def addApp():
     for widget in frame.winfo_children():
         widget.destroy()
 
-def runApps():
-    for app in apps:
-        os.startfile(app)
+
 
     filename = filedialog.askopenfilename(initialdir="/", title="Select File",
                                           filetypes=(("executables", "*.exe"), ("all files", "*.*")))
@@ -20,6 +18,10 @@ def runApps():
     for app in apps:
         label = tk.Label(frame, text=app, bg="gray")
         label.pack()
+
+def runApps():
+    for app in apps:
+        os.startfile(app)
 
 canvas = tk.Canvas(root, height=700, width=700, bg="#263D42")
 canvas.pack()
