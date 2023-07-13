@@ -8,7 +8,8 @@ apps=[]
 if os.path.isfile('save.txt'):
     with open('save.txt', 'r') as f:
         tempApps = f.read()
-        print(tempApps)
+        tempApps = tempApps.split(',')
+        apps = [x for x in tempApps if x.strip()]
 
 def addApp():
     for widget in frame.winfo_children():
@@ -41,6 +42,10 @@ openFile.pack()
 
 runApps = tk.Button(root, text="RUN", padx=10, pady=5, fg="white", bg="#263D42", command=runApps)
 runApps.pack()
+
+for app in apps:
+    label = tk.Label(frame, text=app)
+    label.pack()
 
 root.mainloop()
 
