@@ -38,3 +38,7 @@ runApps = tk.Button(root, text="RUN", padx=10, pady=5, fg="white", bg="#263D42",
 runApps.pack()
 
 root.mainloop()
+
+with open('save.txt', 'w') as f:
+    for app in apps:
+        f.write(app + ',')
