@@ -5,8 +5,8 @@ import os
 root = tk.Tk()
 
 def addApp():
-
-
+    filename = filedialog.askopenfilename(initialdir="/", title="Select File",
+                                          filetypes=(("executables", "*.exe"), ("all files", "*.*")))
 
 canvas = tk.Canvas(root, height=700, width=700, bg="#263D42")
 canvas.pack()
